@@ -1,0 +1,48 @@
+#+TITLE:   Meow mode for Doom Emacs
+#+DATE:    December 6, 2021
+#+SINCE:   v2021.12
+
+* Overview
+This community module by me and [[https://github.com/VitalyAnkh][Vitaly]] (their older commits can be seen in the archived reposity) adds support for [[https://github.com/meow-edit/meow][meow]], a global minor-mode for simple but powerful modal editing.
+
+* Getting started
+
+** Prerequisites
+This module has no prerequisites
+
+** Installation
+Make the directories =modules/editor= in your doom directory, usually (=~/.config/doom= or =~/.doom.d=), then clone this repo as =<doom-directory>/modules/editor/meow=
+#+BEGIN_SRC sh
+mkdir -p ~/.doom.d/modules/editor && git clone https://github.com/Not-Leader/doom-meow ~/.doom.d/modules/editor/meow
+#+END_SRC sh
+
+Then add =meow= to the =:editor= section of the init.el of your doom directory, with the module flag matching your layout and (recommended) with the =+keypad= and =+override= module flags.
+#+BEGIN_SRC elisp
+:editor
+(meow +qwerty +override +keypad)
+;;(evil +everywhere); come to the dark side, we have cookies
+...
+#+END_SRC elisp
+
+** Issues
+This module can not be ran alongside the modules: =:editor evil=, =:editor god=, or =:editor objed=. Enabling them with =:editor meow= will cause keybindings to conflict.
+
+* Description
+
+** Module Flags
++ ~+colemak~ Add default configuration for ~colemak~ layout. 
++ ~+dvorak~ Add default configuration for ~dvorak~ layout.
++ ~+dvp~ Add default configuration for ~dvp~ layout.
++ ~+qwerty~ Add default configuration for ~qwerty~ layout.
++ ~+keypad~ Use meow's ~meow-keypad-mode~ instead of Doom's ~doom/leader~
++ ~+override~ Have meow override movement keybinds in most major modes.
++ ~+clipboard~ TODO: Use system clipboard instaed of meow's kill ring.
+
+** Plugins
+
++ [[https://github.com/meow-edit/meow][meow]]
+
+* Features
+
+[[https://github.com/meow-edit/meow][See the Meow project README]] for information on keybinds and usage.
+# Also, if you enabled this module, run =meow-tutor= in Emacs to get started with meow. (meow-tutor is not used in this package version)
