@@ -2,7 +2,19 @@
 #+DATE:    December 6, 2021
 #+SINCE:   v2021.12
 
+* Table of Contents :TOC_3:noexport:
+- [[#overview][Overview]]
+- [[#getting-started][Getting started]]
+  - [[#prerequisites][Prerequisites]]
+  - [[#installation][Installation]]
+  - [[#issues][Issues]]
+- [[#description][Description]]
+  - [[#module-flags][Module Flags]]
+  - [[#plugins][Plugins]]
+- [[#features][Features]]
+
 * Overview
+
 This community module by me and [[https://github.com/VitalyAnkh][Vitaly]] (their older commits can be seen in the archived reposity) adds support for [[https://github.com/meow-edit/meow][meow]], a global minor-mode for simple but powerful modal editing.
 
 * Getting started
