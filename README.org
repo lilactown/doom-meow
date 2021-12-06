@@ -4,6 +4,7 @@
 
 * Table of Contents :TOC_3:noexport:
 - [[#overview][Overview]]
+- [[#features][Features]]
 - [[#getting-started][Getting started]]
   - [[#prerequisites][Prerequisites]]
   - [[#installation][Installation]]
@@ -14,11 +15,15 @@
 - [[#description][Description]]
   - [[#module-flags][Module Flags]]
   - [[#plugins][Plugins]]
-- [[#features][Features]]
 
 * Overview
 
-This community module by me and [[https://github.com/VitalyAnkh][Vitaly]] (their older commits can be seen in the archived reposity) adds support for [[https://github.com/meow-edit/meow][meow]], a global minor-mode for simple but powerful modal editing.
+This community module by me and [[https://github.com/VitalyAnkh][Vitaly]] (their older commits can be seen in the archived repository) adds support for [[https://github.com/meow-edit/meow][meow]], a global minor-mode for simple but powerful modal editing.
+
+* Features
+
+[[https://github.com/meow-edit/meow][See the Meow project README]] for information on keybinds and usage.
+Also, if you have enabled this module, run =meow-tutor= in Emacs to get started with meow.
 
 * Getting started
 
@@ -72,7 +77,3 @@ If none of the layout module flags are enabled, meow will not have any cheatshee
 
 + [[https://github.com/meow-edit/meow][meow]]
 
-* Features
-
-[[https://github.com/meow-edit/meow][See the Meow project README]] for information on keybinds and usage.
-# Also, if you enabled this module, run =meow-tutor= in Emacs to get started with meow. (meow-tutor is not used in this package version)
