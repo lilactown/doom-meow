@@ -313,12 +313,14 @@
      ((featurep! :editor meow +dvorak) (meow/setup-dvorak))
      ((featurep! :editor meow +qwerty) (meow/setup-qwerty))
      ((featurep! :editor meow +dvp) (meow/setup-dvp)))
-  (cond ((featurep! :editor meow +keypad)
-         (meow/setup-keypad))
-      (t (map! :map meow-normal-state-keymap
-          doom-leader-key doom-leader-map)
-         (map! :map meow-motion-state-keymap
-          doom-leader-key doom-leader-map)
-         (map! :map meow-beacon-state-keymap
-          doom-leader-key nil)
-         (meow/setup-leader))))
+  (cond
+   ((featurep! :editor meow +leader)
+    (map! :map meow-normal-state-keymap
+      doom-leader-key doom-leader-map)
+    (map! :map meow-motion-state-keymap
+     doom-leader-key doom-leader-map)
+    (map! :map meow-beacon-state-keymap
+     doom-leader-key nil)
+    (meow/setup-leader))
+   (t (meow/setup-keypad)))
+  (setq meow-use-clipboard (featurep! :editor meow +clipboard)))

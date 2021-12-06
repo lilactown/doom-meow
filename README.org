@@ -69,9 +69,9 @@ If none of the layout module flags are enabled, meow will not have any cheatshee
 + ~+dvorak~ Add default configuration for ~dvorak~ layout.
 + ~+dvp~ Add default configuration for ~dvp~ layout.
 + ~+qwerty~ Add default configuration for ~qwerty~ layout.
-+ ~+keypad~ Use meow's ~meow-keypad-mode~ instead of Doom's ~doom/leader~
++ ~+leader~ Use Doom's ~doom/leader~ instead of meow's ~meow-keypad-mode~
 + ~+override~ Have meow override movement keybinds in most major modes.
-+ ~+clipboard~ TODO: Use system clipboard instaed of meow's kill ring.
++ ~+clipboard~ Use system clipboard instaed of meow's kill ring.
 
 ** Plugins
 
