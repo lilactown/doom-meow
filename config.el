@@ -20,7 +20,7 @@
 
 ;; Keypad
 (defun meow/setup-keypad ()
- (map! :map meow-motion-state-keymap
+ (map! :map meow-leader-keymap
   "?" #'meow-cheatsheet
   "/" #'meow-keypad-describe-key
   "1" #'meow-digit-argument
@@ -64,7 +64,7 @@
     ;; Since special modes usually use n to move down, we only overwrite e here.
     '("e" . meow-prev))
    (until (featurep! :editor meow +keypad)
-          (map! :map meow-keypad-state-keymap "\\ e" . "H-e"))
+          (map! :map meow-motion-state-keymap "\\ e" "H-e"))
    (meow-leader-define-key '("e" . "H-e")))
   (map! :map meow-normal-state-keymap
    "[" #'meow-beginning-of-thing
@@ -177,8 +177,8 @@
        "\\ k" "H-k"))
    (meow-leader-define-key
     ;; SPC j/k will run the original command in MOTION state.
-    "j" #'"H-j"
-    "k" #'"H-k"))
+    "j" "H-j"
+    "k" "H-k"))
   (map! :map meow-normal-state-keymap
    "[" #'meow-beginning-of-thing
    "]" #'meow-end-of-thing
