@@ -55,6 +55,13 @@ If you want these bindings to be more easily accessible from meow's keypad, then
   "l" #'meow-keypad-start)
 #+END_SRC elisp
 
+It is also possible to directly bind the key to =doom-localleader-alt-key=
+#+BEGIN_SRC elisp
+(setq doom-localleader-alt-key "C-l")
+(map! :map meow-leader-keymap
+  "l" doom-localleader-alt-key)
+#+END_SRC elisp
+
 *** Manually creating cheatsheet and bindings
 If none of the layout module flags are enabled, meow will not have any cheatsheet or bindings (excluding the keypad or leader bindings). If you want to manually configure these, then it can be done by modifying the =meow-cheatsheet-layout= variable (see one of the preconfigured values to understand how to configure it) and through binding keys to =meow-normal-state-map=. If you want to manually add override bindings as well, bind keys to =meow-motion-state-map=
 
