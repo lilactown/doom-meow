@@ -59,12 +59,12 @@
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-colemak)
   (meow/setup)
   (when (featurep! :editor meow +override)
-   (map! :map meow-motion-state-keymap
+   (meow-motion-overwrite-define-key
     ;; Use e to move up, n to move down.
     ;; Since special modes usually use n to move down, we only overwrite e here.
     '("e" . meow-prev))
-   (until (featurep! :editor meow +keypad)
-          (map! :map meow-motion-state-keymap "\\ e" "H-e"))
+   (when (featurep! :editor meow +leader)
+         (meow-motion-overwrite-define-key '("\\ e" "H-e")))
    (meow-leader-define-key '("e" . "H-e")))
   (map! :map meow-normal-state-keymap
    "[" #'meow-beginning-of-thing
@@ -114,7 +114,7 @@
 (defun meow/setup-dvorak ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvorak)
   (when (featurep! :editor meow +override)
-   (map! :map meow-motion-state-keymap)) ; custom keybinding for motion state
+   (meow-motion-overwrite-define-key)) ; custom keybinding for motion state
   (meow/setup)
   (map! :map meow-normal-state-keymap
    "<" #'meow-beginning-of-thing
@@ -133,8 +133,8 @@
    "G" #'meow-grab
    "h" #'meow-left
    "H" #'meow-left-expand
-   "i" #'meow-insert
    "I" #'meow-open-above
+   "i" #'meow-insert
    "j" #'meow-join
    "k" #'meow-kill
    "l" #'meow-till
@@ -168,17 +168,17 @@
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
   (meow/setup)
   (when (featurep! :editor meow +override)
-   (map! :map meow-motion-state-keymap
-    "j" #'meow-next
-    "k" #'meow-prev)
-   (until (featurep! :editor meow +keypad)
-     (map! :map meow-motion-state-keymap
-       "\\ j" "H-j"
-       "\\ k" "H-k"))
+   (meow-motion-overwrite-define-key
+    '("j" meow-next)
+    '("k" meow-prev))
+   (when (featurep! :editor meow +leader)
+     (meow-motion-overwrite-define-key
+      '("\\ j" "H-j")
+      '("\\ k" "H-k")))
    (meow-leader-define-key
     ;; SPC j/k will run the original command in MOTION state.
-    "j" "H-j"
-    "k" "H-k"))
+    '("j" "H-j")
+    '("k" "H-k")))
   (map! :map meow-normal-state-keymap
    "[" #'meow-beginning-of-thing
    "]" #'meow-end-of-thing
@@ -230,7 +230,7 @@
 (defun meow/setup-dvp ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
   (when (featurep! :editor meow +override)
-    (map! :map meow-motion-state-keymap)) ; custom keybinding for motion state
+    (meow-motion-overwrite-define-key)) ; custom keybinding for motion state
   (map! :map meow-normal-state-keymap
    "?" #'meow-cheatsheet
    "*" #'meow-expand-0
