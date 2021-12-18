@@ -11,6 +11,7 @@
 - [[#configuration][Configuration]]
     - [[#leader-and-localleader][Leader and Localleader]]
     - [[#manually-creating-cheatsheet-and-bindings][Manually creating cheatsheet and bindings]]
+    - [[#system-clipboard][System Clipboard]]
   - [[#issues][Issues]]
 - [[#description][Description]]
   - [[#module-flags][Module Flags]]
@@ -80,7 +81,6 @@ If you want to manually add override bindings as well, bind keys using =meow-mot
 + ~+qwerty~ Add default configuration for ~qwerty~ layout.
 + ~+leader~ Use Doom's ~doom/leader~ instead of meow's ~meow-keypad-mode~
 + ~+override~ Have meow override movement keybinds in most major modes.
-+ ~+clipboard~ Use system clipboard instaed of meow's kill ring.
 
 ** Plugins
 
