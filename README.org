@@ -68,6 +68,11 @@ If none of the layout module flags are enabled, meow will not have any cheatshee
 
 If you want to manually add override bindings as well, bind keys using =meow-motion-overwrite-define-key= and add passthrough bindings by binding something to =H-<key>= using one of the meow-*-define-key macros
 
+*** System Clipboard
+Meow uses a local kill ring by default, but it can be modified to use the local through setting the variable =meow-use-clipboard= to =t=
+#+BEGIN_SRC elisp
+(setq meow-use-clipboard t)
+#+END_SRC elisp
 ** Issues
 + This module can not be ran alongside the modules: =:editor evil=, =:editor god=, or =:editor objed=. Enabling them with =:editor meow= will cause keybindings to conflict.
 + The localleader keybinds are garbled, and many leader keybindings are missing when the =+keypad= module flag is disabled.
