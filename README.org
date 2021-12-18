@@ -46,7 +46,7 @@ Then add =meow= to the =:editor= section of the init.el of your doom directory, 
 #+END_SRC elisp
 * Configuration
 *** Leader and Localleader
-When the =+keypad= module flag is enabled, the bindings for =doom-leader-alt-key= and =doom-localleader-alt-key= are used for doom's leader and localleader key respectively.
+When the =+leader= module flag is disabled, the bindings for =doom-leader-alt-key= and =doom-localleader-alt-key= are used for doom's leader and localleader key respectively.
 
 If you want these bindings to be more easily accessible from meow's keypad, then they can be bound to something that exclusively uses the Control key, eg: setting =doom-localleader-alt-key= to =C-l=. Then the =l= binding of =meow-leader-keymap= (=SPC l= by default) can be used to access the localleader bindings by binding it to the function =meow-keypad-start= . These bindings should be set in the =config.el= file
 
@@ -75,7 +75,7 @@ Meow uses a local kill ring by default, but it can be modified to use the local 
 #+END_SRC elisp
 ** Issues
 + This module can not be ran alongside the modules: =:editor evil=, =:editor god=, or =:editor objed=. Enabling them with =:editor meow= will cause keybindings to conflict.
-+ The localleader keybinds are garbled, and many leader keybindings are missing when the =+keypad= module flag is disabled.
++ The localleader keybinds are garbled, and many leader keybindings are missing when the =+leader= module flag is enabled.
 
 * Description
 
