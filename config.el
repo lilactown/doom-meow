@@ -52,7 +52,7 @@
    "," #'meow-inner-of-thing
    "." #'meow-bounds-of-thing
    "'" #'repeat
-   "<escape>" #'mode-line-other-buffer))
+   "<escape>" #'ignore))
 
 ;; Colemak
 (defun meow/setup-colemak ()
@@ -302,7 +302,7 @@
    "y" #'meow-yank
    "z" #'meow-pop-selection
    "'" #'repeat
-   "<escape>" #'mode-line-other-buffer))
+   "<escape>" #'ignore))
 
 (use-package! meow
   :hook (doom-init-modules . meow-global-mode)
