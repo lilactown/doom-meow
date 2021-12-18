@@ -32,7 +32,8 @@
   "7" #'meow-digit-argument
   "8" #'meow-digit-argument
   "9" #'meow-digit-argument
-  "0" #'meow-digit-argument))
+  "0" #'meow-digit-argument
+  "h" #'help-command))
 
 ;; applies to all layouts (except dvp)
 (defun meow/setup ()
