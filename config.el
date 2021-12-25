@@ -323,4 +323,5 @@
     (map! :map meow-beacon-state-keymap
      doom-leader-key nil)
     (meow/setup-leader))
-   (t (meow/setup-keypad))))
+   (t (meow/setup-keypad)))
+  (map! :map meow-keymap [remap describe-key] #'helpful-key))
