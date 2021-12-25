@@ -1,4 +1,4 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; editor/meow/packages.el
 
-(package! meow :pin "6d40f0162a2cb910337fd55c0207d0dcc5dd5ed6")
+(package! meow :pin "959c19128ec2f9e4933bad6c9f29ac70bbb2083c")
