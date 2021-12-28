@@ -103,6 +103,7 @@
    "S" #'meow-open-above
    "t" #'meow-till
    "u" #'meow-undo
+   "U" #'meow-undo-in-selection
    "v" #'meow-search
    "w" #'meow-next-word
    "W" #'meow-next-symbol
