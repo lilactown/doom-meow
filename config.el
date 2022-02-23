@@ -20,7 +20,7 @@
 
 ;; Keypad
 (defun meow/setup-keypad ()
- (map! :map meow-leader-keymap
+ (map! :map meow-keypad-state-keymap
   "?" #'meow-cheatsheet
   "/" #'meow-keypad-describe-key
   "1" #'meow-digit-argument
