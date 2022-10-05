@@ -307,7 +307,7 @@
    "<escape>" #'ignore))
 
 (use-package! meow
-  :hook (doom-init-modules . meow-global-mode)
+  :hook (doom-after-modules-config . meow-global-mode)
   :demand t
   :config
   (cond
