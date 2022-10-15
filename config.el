@@ -112,6 +112,63 @@
    "y" #'meow-save
    "z" #'meow-pop-selection))
 
+;; Colemak-dh
+(defun meow/setup-colemak-dh ()
+  (setq meow-cheatsheet-layout meow-cheatsheet-layout-colemak-dh)
+  (meow/setup)
+  (when (modulep! +override)
+   (meow-motion-overwrite-define-key
+    ;; Use e to move up, n to move down.
+    ;; Since special modes usually use n to move down, we only overwrite e here.
+    '("e" . meow-prev))
+   (when (featurep! :editor meow +leader)
+         (meow-motion-overwrite-define-key '("\\ e" . "H-e")))
+   (meow-leader-define-key '("e" . "H-e")))
+  (map! :map meow-normal-state-keymap
+   "[" #'meow-beginning-of-thing
+   "]" #'meow-end-of-thing
+   "/" #'meow-visit
+   "a" #'meow-append
+   "A" #'meow-open-below
+   "b" #'meow-back-word
+   "B" #'meow-back-symbol
+   "c" #'meow-change
+   "d" #'meow-delete
+   "e" #'meow-prev
+   "E" #'meow-prev-expand
+   "f" #'meow-find
+   "g" #'meow-cancel-selection
+   "G" #'meow-grab
+   "m" #'meow-left
+   "M" #'meow-left-expand
+   "i" #'meow-right
+   "I" #'meow-right-expand
+   "j" #'meow-join
+   "k" #'meow-kill
+   "l" #'meow-line
+   "L" #'meow-goto-line
+   "h" #'meow-mark-word
+   "H" #'meow-mark-symbol
+   "n" #'meow-next
+   "N" #'meow-next-expand
+   "o" #'meow-block
+   "O" #'meow-to-block
+   "p" #'meow-yank
+   "q" #'meow-quit
+   "r" #'meow-replace
+   "s" #'meow-insert
+   "S" #'meow-open-above
+   "t" #'meow-till
+   "u" #'meow-undo
+   "U" #'meow-undo-in-selection
+   "v" #'meow-search
+   "w" #'meow-next-word
+   "W" #'meow-next-symbol
+   "x" #'meow-delete
+   "X" #'meow-backward-delete
+   "y" #'meow-save
+   "z" #'meow-pop-selection))
+
 ;; Dvorak
 (defun meow/setup-dvorak ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvorak)
@@ -311,6 +368,7 @@
   :demand t
   :config
   (cond
+     ((modulep! +colemak-dh) (meow/setup-colemak-dh))
      ((modulep! +colemak) (meow/setup-colemak))
      ((modulep! +dvorak) (meow/setup-dvorak))
      ((modulep! +qwerty) (meow/setup-qwerty))
